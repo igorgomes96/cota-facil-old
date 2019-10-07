@@ -1,0 +1,51 @@
+.descricao {
+  max-width: initial;
+
+  p {
+    font-size: 13px;
+    line-height: 1.2;
+  }
+}
+
+.qtda {
+  padding-top: 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+
+  ion-input {
+    max-width: 45px;
+    display: inline-block;
+    --border: 0;
+    font-size: 14px;
+  }
+
+  ion-icon {
+    font-size: 16px;
+  }
+}
+
+:host .qtda ::ng-deep {
+  input {
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 0;
+  }
+}
+
+.qtda-btn {
+  font-weight: bold;
+  vertical-align: middle;
+  height: 25px;
+  margin-top: 0;
+  margin-bottom: 0;
+  --box-shadow: none;
+  --background: transparent;
+  --padding-start: 2px;
+  --padding-end: 2px;
+}
+
+.valor p {
+  line-height: 1;
+}

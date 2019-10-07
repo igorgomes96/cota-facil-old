@@ -1,0 +1,6 @@
+<ion-list>
+  <ion-item *ngFor="let item of itens">
+    <app-info-item [item]="item" (adiciona)="adicionaItem($event)"
+      (remove)="removeItem($event)" (atualiza)="atualizaItem($event)"></app-info-item>
+  </ion-item>
+</ion-list>
