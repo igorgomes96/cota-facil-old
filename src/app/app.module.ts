@@ -1,6 +1,8 @@
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
+import { registerLocaleData } from '@angular/common';
+import localePt from '@angular/common/locales/pt';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
@@ -14,6 +16,10 @@ import { SharedModule } from './shared/shared.module';
 import { PesquisaModule } from './modules/pesquisa/pesquisa.module';
 import { OrcamentosModule } from './modules/orcamentos/orcamentos.module';
 import { PerfilModule } from './modules/perfil/perfil.module';
+import { MinhaListaModule } from './modules/minha-lista/minha-lista.module';
+import { TabsPageModule } from './modules/tabs/tabs.module';
+
+registerLocaleData(localePt);
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,17 +28,20 @@ import { PerfilModule } from './modules/perfil/perfil.module';
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
+    TabsPageModule,
     InicioModule,
     CoreModule,
     SharedModule,
     PesquisaModule,
     OrcamentosModule,
-    PerfilModule
+    PerfilModule,
+    MinhaListaModule
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    { provide: LOCALE_ID, useValue: 'pt-BR' }
   ],
   bootstrap: [AppComponent]
 })

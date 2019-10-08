@@ -1,5 +1,6 @@
 export const endpoints = {
     categorias: '/categorias',
     unidades: '/unidades',
-    itens: '/itens'
+    itens: '/itens',
+    lista: '/lista'
 };

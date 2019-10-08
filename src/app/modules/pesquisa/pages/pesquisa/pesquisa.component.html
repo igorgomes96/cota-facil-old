@@ -1,6 +1,7 @@
 <ion-content class="ion-padding">
-  <app-pesquisa-input></app-pesquisa-input>
-  <app-lista-item [itens]="itens"></app-lista-item>
+  <app-pesquisa-input (pesquisar)="pesquisar($event)"></app-pesquisa-input>
+  <app-lista-item [itens]="itens" (adiciona)="adicionaItem($event)" (remove)="removeItem($event)"
+    (atualiza)="atualizaItem($event)"></app-lista-item>
 
   <!-- <ion-grid>
     <ion-row>
