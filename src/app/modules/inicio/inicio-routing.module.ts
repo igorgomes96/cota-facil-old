@@ -5,7 +5,10 @@ import { InicioComponent } from './pages/inicio/inicio.component';
 const routes: Routes = [
   {
     path: '',
-    component: InicioComponent
+    component: InicioComponent,
+    data: {
+      header: 'Início'
+    }
   }
 ];
 

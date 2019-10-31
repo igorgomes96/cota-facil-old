@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Categoria } from 'src/app/shared/models/categoria';
-import { CategoriasApiService } from 'src/app/core/api/categorias-api.service';
-import { ItensApiService } from 'src/app/core/api/itens-api.service';
 import { Item } from 'src/app/shared/models/item';
-import { ListaService } from 'src/app/core/services/lista.service';
+import { MinhaListaService } from 'src/app/core/services/minha-lista.service';
 
 @Component({
   selector: 'app-pesquisa',
@@ -17,23 +15,21 @@ export class PesquisaComponent implements OnInit {
   itens: Item[] = [];
 
   constructor(
-    private categoriasApi: CategoriasApiService,
-    private itensApi: ItensApiService,
-    private listaService: ListaService) { }
+    private listaService: MinhaListaService) { }
 
   ngOnInit() {
-    this.categoriasApi.getAll()
-      .subscribe((categorias: Categoria[]) => this.categorias = categorias);
+    // this.categoriasApi.getAll()
+    //   .subscribe((categorias: Categoria[]) => this.categorias = categorias);
 
-    this.itensApi.getAll()
-      .subscribe((itens: Item[]) => {
-        this.itens = itens;
-      });
+    // this.itensApi.getAll()
+    //   .subscribe((itens: Item[]) => {
+    //     this.itens = itens;
+    //   });
   }
 
   pesquisar(texto: string) {
-    this.itensApi.getAll({ pesquisa: texto })
-      .subscribe((itens: Item[]) => this.itens = itens);
+    // this.itensApi.getAll({ pesquisa: texto })
+    //   .subscribe((itens: Item[]) => this.itens = itens);
   }
 
   adicionaItem(item: Item) {

@@ -1,0 +1,5 @@
+<div class="conversa" [class.direita]="mensagem.posicaoMensagem === PosicaoMensagem.Direita"
+  [class.esquerda]="mensagem.posicaoMensagem === PosicaoMensagem.Esquerda">
+  <small>{{ mensagem.horario | date:'dd/MMM HH:mm'}}</small>
+  <p>{{ mensagem.texto }}</p>
+</div>

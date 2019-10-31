@@ -1,21 +1,30 @@
-ion-button {
-    --box-shadow: none;
-    bottom: 0;
-    width: 100%;
-    margin-bottom: 57px;
-    position: absolute;
-    margin-left: 0;
+// ion-button {
+//     --box-shadow: none;
+//     bottom: 0;
+//     width: 100%;
+//     margin-bottom: 57px;
+//     position: absolute;
+//     margin-left: 0;
+// }
+
+// :host ::ng-deep ion-button button {
+//     color: white;
+// }
+
+// .qtda {
+//     right: 15px;
+//     position: absolute;
+
+//     ion-badge {
+//         font-size: 70%;
+//     }
+// }
+
+ion-fab {
+    margin-bottom: 60px;
+    margin-right: 12px;
 }
 
-:host ::ng-deep ion-button button {
-    color: white;
-}
-
-.qtda {
-    right: 15px;
-    position: absolute;
-
-    ion-badge {
-        font-size: 70%;
-    }
+.margin-header {
+    margin-top: 52px;
 }

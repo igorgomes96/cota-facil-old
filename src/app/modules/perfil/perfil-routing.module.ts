@@ -4,9 +4,12 @@ import { PerfilComponent } from './pages/perfil/perfil.component';
 
 
 const routes: Routes = [
-  { 
+  {
     path: '',
-    component: PerfilComponent
+    component: PerfilComponent,
+    data: {
+      header: 'Meu Perfil'
+    }
   }
 ];
 

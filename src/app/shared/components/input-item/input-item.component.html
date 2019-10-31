@@ -1,0 +1,13 @@
+<ion-item lines="none" color="gray">
+  <ion-textarea [autoGrow]="!texto ? false : true" rows="1" placeholder="Adicionar item..." [(ngModel)]="texto"
+    (keydown.enter)="enviar($event)"></ion-textarea>
+  <ion-button shape="round" fill="clear" (click)="escolherArquivo()">
+    <ion-icon name="attach"></ion-icon>
+  </ion-button>
+  <ion-button shape="round" style="margin-right: 8px;" fill="clear" (click)="tirarFoto()">
+    <ion-icon name="camera"></ion-icon>
+  </ion-button>
+  <ion-button shape="round" (click)="enviar()" [disabled]="!texto">
+    <ion-icon name="add"></ion-icon>
+  </ion-button>
+</ion-item>

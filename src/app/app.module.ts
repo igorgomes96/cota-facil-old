@@ -13,11 +13,12 @@ import { AppComponent } from './app.component';
 import { InicioModule } from './modules/inicio/inicio.module';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
-import { PesquisaModule } from './modules/pesquisa/pesquisa.module';
-import { OrcamentosModule } from './modules/orcamentos/orcamentos.module';
 import { PerfilModule } from './modules/perfil/perfil.module';
 import { MinhaListaModule } from './modules/minha-lista/minha-lista.module';
 import { TabsPageModule } from './modules/tabs/tabs.module';
+import { ChatModule } from './modules/chat/chat.module';
+import { ListasModule } from './modules/listas/listas.module';
+import { AuthModule } from './modules/auth/auth.module';
 
 registerLocaleData(localePt);
 
@@ -32,10 +33,11 @@ registerLocaleData(localePt);
     InicioModule,
     CoreModule,
     SharedModule,
-    PesquisaModule,
-    OrcamentosModule,
+    ListasModule,
     PerfilModule,
-    MinhaListaModule
+    MinhaListaModule,
+    ChatModule,
+    AuthModule,
   ],
   providers: [
     StatusBar,

@@ -1,0 +1,27 @@
+.container-anexos {
+  overflow: auto;
+  white-space: nowrap;
+  // padding-left: 20px;
+  // padding-right: 20px;
+  padding-top: 4px;
+  padding-bottom: 0px;
+  margin-bottom: -4px;
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  .scroll {
+    overflow: auto;
+  }
+
+  div {
+    display: inline-block;
+
+    ion-thumbnail {
+      --size: 100px;
+      margin: 5px;
+      border: 1.3px dashed var(--ion-color-primary);
+      padding: 4px;
+    }
+  }
+}

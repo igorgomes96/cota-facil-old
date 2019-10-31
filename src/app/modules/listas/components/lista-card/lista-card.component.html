@@ -1,0 +1,31 @@
+<ion-card *ngIf="lista">
+  <ion-item>
+    <ion-label class="ion-text-wrap">
+      <p>{{ lista.horarioEnvio | date:'dd/MMM HH:mm' }}</p>
+      <h3><strong>{{ lista.categoria.nome }}</strong></h3>
+    </ion-label>
+    <!-- <ion-button fill="outline" slot="end">View</ion-button> -->
+    <ion-badge color="secondary">{{ lista.qtdaOrcamentos }}</ion-badge>
+  </ion-item>
+
+  <ion-card-content>
+    <ion-item>
+      <ion-icon name="list" slot="start"></ion-icon>
+      <ion-label>{{ lista.itens.length }} itens na lista</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="attach" slot="start"></ion-icon>
+      <ion-label>
+        <span *ngIf="lista.anexos.length; else nenhumAnexo">
+          {{ lista.anexos.length }} {{ lista.anexos.length == 1 ? 'arquivo anexo' : 'arquivos anexos' }}
+        </span>
+        <ng-template #nenhumAnexo>
+          <span>Nenhum arquivo anexo</span>
+        </ng-template>
+      </ion-label>
+    </ion-item>
+
+    <ion-button fill="clear" expand="block" class="ion-margin-top" [routerLink]="['/listas', lista.id]">Ver Orçamentos</ion-button>
+
+  </ion-card-content>
+</ion-card>

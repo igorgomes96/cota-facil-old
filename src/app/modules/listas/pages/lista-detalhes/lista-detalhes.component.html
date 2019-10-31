@@ -1,0 +1,23 @@
+<ion-content class="ion-padding">
+  <div *ngIf="lista">
+    <ion-item-divider>
+      <ion-label>
+        {{ lista.categoria.nome }}
+      </ion-label>
+      <!-- <ion-badge slot="end" *ngIf="lista" color="secondary">{{ qtdaItens }}</ion-badge> -->
+
+    </ion-item-divider>
+
+    <app-lista-item *ngIf="lista" [itens]="lista.itens" [mostrarOpcoes]="false">
+    </app-lista-item>
+  </div>
+</ion-content>
+
+<ion-footer no-border>
+  <div class="ion-padding-horizontal ion-padding-bottom">
+    <ion-button expand="block">
+      <ion-icon name="chatbubbles" slot="start"></ion-icon>
+      Chat
+    </ion-button>
+  </div>
+</ion-footer>

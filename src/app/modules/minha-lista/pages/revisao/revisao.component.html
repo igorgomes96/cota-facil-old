@@ -1,0 +1,36 @@
+<ion-content class="ion-padding">
+
+  <ion-item-divider>
+    <ion-label>
+      Informações para o frete
+    </ion-label>
+  </ion-item-divider>
+
+  <ion-item lines="none">
+    <ion-label>Solicitar valor do Frete</ion-label>
+    <ion-checkbox slot="start" #frete checked="true"></ion-checkbox>
+  </ion-item>
+
+  <app-endereco-entrega *ngIf="frete.checked"></app-endereco-entrega>
+
+  <ion-item-divider>
+    <ion-label>
+      Minha Lista
+    </ion-label>
+    <ion-badge slot="end" color="secondary" *ngIf="lista">{{ qtdaItens }}</ion-badge>
+
+  </ion-item-divider>
+
+  <app-lista-item *ngIf="lista" [itens]="lista.itens" [mostrarOpcoes]="true" (remove)="removeItem($event)"></app-lista-item>
+
+  <ion-item lines="none" *ngIf="lista && lista.anexos && lista.anexos.length">
+    <ion-icon name="attach" slot="start"></ion-icon>
+    <ion-label>{{ lista.anexos.length }} <span>{{ lista.anexos.length > 1 ? 'anexos' : 'anexo' }}</span></ion-label>
+  </ion-item>
+</ion-content>
+
+<ion-footer no-border>
+  <div class="ion-padding-horizontal ion-padding-bottom">
+    <ion-button expand="block" (click)="enviarLista()">Enviar</ion-button>
+  </div>
+</ion-footer>

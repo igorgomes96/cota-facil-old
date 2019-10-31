@@ -3,22 +3,36 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { HttpClientModule } from '@angular/common/http';
+
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireAuthGuardModule } from '@angular/fire/auth-guard';
+
 import { PesquisaInputComponent } from './components/pesquisa-input/pesquisa-input.component';
-import { InfoItemComponent } from './components/info-item/info-item.component';
 import { ListaItemComponent } from './components/lista-item/lista-item.component';
+import { InputItemComponent } from './components/input-item/input-item.component';
+import { environment } from 'src/environments/environment';
+
 
 @NgModule({
   declarations: [
     PesquisaInputComponent,
-    InfoItemComponent,
-    ListaItemComponent
+    ListaItemComponent,
+    InputItemComponent
   ],
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    AngularFireStorageModule,
+    AngularFireAuthModule,
+    AngularFireAuthGuardModule
   ],
   exports: [
     CommonModule,
@@ -27,8 +41,13 @@ import { ListaItemComponent } from './components/lista-item/lista-item.component
     HttpClientModule,
     ReactiveFormsModule,
     PesquisaInputComponent,
-    InfoItemComponent,
-    ListaItemComponent
+    ListaItemComponent,
+    InputItemComponent,
+    AngularFireModule,
+    AngularFirestoreModule,
+    AngularFireStorageModule,
+    AngularFireAuthModule,
+    AngularFireAuthGuardModule
   ]
 })
 export class SharedModule { }

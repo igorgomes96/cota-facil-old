@@ -1,0 +1,22 @@
+ion-item {
+  padding-bottom: 6px;
+  background: var(--ion-color-gray);
+
+  ion-textarea {
+    margin-right: 10px;
+    border: 1px solid #ddd;
+    border-radius: 18px;
+    --background: white;
+    --padding-top: 10px;
+    --padding-bottom: 8px;
+    --padding-end: 12px;
+    margin-right: 0;
+    padding-left: 12px;
+  }
+  ion-button {
+    height: 38px;
+    width: 38px;
+    margin-bottom: 0;
+    --box-shadow: 0;
+  }
+}

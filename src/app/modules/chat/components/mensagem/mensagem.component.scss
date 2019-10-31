@@ -1,0 +1,52 @@
+
+.conversa {
+    display: inline-block;
+    position: relative;
+    width: 80%;
+    padding: 5px 10px;
+    margin: 5px 10px;
+    border-radius: 8px;
+
+    small {
+        font-size: 10px;
+    }
+
+    p {
+        margin-top: 2px;
+        margin-bottom: 5px;
+        font-size: 14px;
+    }
+
+    &.direita {
+        float: right;
+        background: var(--ion-color-primary);
+        color: var(--ion-color-primary-contrast);
+
+        &::after {
+           content: '';
+           height: 0;
+           width: 0;
+           position: absolute;
+           top: 0;
+           right: -10px;
+           border-right: 20px solid transparent;
+           border-top: 30px solid var(--ion-color-primary);
+        }
+    }
+
+    &.esquerda {
+        background: var(--ion-color-primary-contrast);
+        color: #333;
+
+        &::before {
+            content: '';
+            height: 0;
+            width: 0;
+            position: absolute;
+            top: 0;
+            left: -10px;
+            border-left: 20px solid transparent;
+            border-top: 30px solid var(--ion-color-primary-contrast);
+         }
+    }
+}

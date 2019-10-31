@@ -1,0 +1,11 @@
+<ion-content fullscreen #content>
+    <div *ngIf="chat">
+        <app-mensagem *ngFor="let mensagem of chat.mensagens; let i=index"
+            [mensagem]="mensagem"></app-mensagem>
+    </div>
+</ion-content>
+
+<ion-footer no-border>
+    <app-input-item (adicionarTexto)="enviaTexto($event)" (adicionarImagem)="enviaImagem($event)">
+    </app-input-item>
+</ion-footer>

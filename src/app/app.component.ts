@@ -4,9 +4,10 @@ import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { Lista } from './shared/models/lista';
-import { ListaService } from './core/services/lista.service';
-import { Router, NavigationEnd, ActivationStart } from '@angular/router';
+import { MinhaListaService } from './core/services/minha-lista.service';
+import { Router, ActivationStart } from '@angular/router';
 import { filter, distinctUntilChanged } from 'rxjs/operators';
+import { AuthService } from './core/services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -16,43 +17,31 @@ import { filter, distinctUntilChanged } from 'rxjs/operators';
 export class AppComponent implements OnInit {
 
   lista: Lista;
-  exibeBotaoMinhaLista = false;
+  header = '';
 
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
-    private listaService: ListaService,
+    private listaService: MinhaListaService,
     private router: Router
   ) {
     this.initializeApp();
   }
 
   ngOnInit() {
-    this.listaService.listaAtualizada().subscribe(lista => this.lista = lista);
+    this.listaService.minhaLista().subscribe(lista => this.lista = lista);
 
     this.router.events.pipe(
       filter(event => event instanceof ActivationStart),
       distinctUntilChanged()
     ).subscribe((event: ActivationStart) => {
-      if (event.snapshot.data.hasOwnProperty('exibeBotaoMinhaLista')) {
-        this.exibeBotaoMinhaLista = event.snapshot.data.exibeBotaoMinhaLista;
+      if (event.snapshot.data.hasOwnProperty('header')) {
+        this.header = event.snapshot.data.header;
+      } else {
+        this.header = '';
       }
     });
-
-    // this.router.events.pipe(
-    //   filter(event => event instanceof NavigationEnd),
-    //   distinctUntilChanged()
-    // ).subscribe(_ => {
-    //   if (!this.showLeftNav) {
-    //     $('#page-wrapper').css('margin-left', '0px');
-    //     $('body').addClass('top-navigation');
-    //   } else {
-    //     $('#page-wrapper').css('margin-left', '');
-    //     $('body').removeClass('top-navigation');
-    //   }
-    // });
-
   }
 
   initializeApp() {

@@ -6,9 +6,6 @@ const routes: Routes = [
   {
     path: '',
     component: TabsPage,
-    data: {
-      exibeBotaoMinhaLista: true
-    },
     children: [
       {
         path: 'inicio',
@@ -21,22 +18,12 @@ const routes: Routes = [
         ]
       },
       {
-        path: 'pesquisa',
+        path: 'listas',
         children: [
           {
             path: '',
             loadChildren: () =>
-              import('../pesquisa/pesquisa.module').then(m => m.PesquisaModule)
-          }
-        ]
-      },
-      {
-        path: 'orcamentos',
-        children: [
-          {
-            path: '',
-            loadChildren: () =>
-              import('../orcamentos/orcamentos.module').then(m => m.OrcamentosModule)
+              import('../listas/listas.module').then(m => m.ListasModule)
           }
         ]
       },

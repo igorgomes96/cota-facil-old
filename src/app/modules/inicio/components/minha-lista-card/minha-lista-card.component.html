@@ -3,16 +3,15 @@
     <ion-card-title>Minha lista</ion-card-title>
   </ion-card-header>
 
-  <ion-card-content *ngIf="lista; else listaVazia">
-    Você já adicionou {{ lista.itens.length }} produtos à sua lista. Deseja adicionar mais itens ou quer revisá-la para solicitar orçamentos?
-    <ion-button expand="block" color="primary" routerLink="/main/pesquisa">Adicionar Produtos</ion-button>
-    <ion-button expand="block" color="secondary" routerLink="/main/pesquisa">Revisar Lista</ion-button>
+  <ion-card-content *ngIf="lista && lista.itens.length; else listaVazia">
+    Você já adicionou {{ lista.itens.length }} produtos à sua lista. Acesse-a para adicionar e remover produtos ou para finalizá-la.
+    <ion-button expand="block" color="primary" routerLink="/minha-lista">Acessar Lista</ion-button>
   </ion-card-content>
 
   <ng-template #listaVazia>
     <ion-card-content>
       Escolha os itens ou produtos e adicione à lista que enviaremos para as lojas, solicitando o orçamento.
-      <ion-button expand="block" color="primary" routerLink="/main/pesquisa">Escolher Produtos</ion-button>
+      <ion-button expand="block" color="primary" routerLink="/minha-lista/categoria">Criar Lista</ion-button>
     </ion-card-content>
   </ng-template>
 

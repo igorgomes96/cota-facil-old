@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Lista } from 'src/app/shared/models/lista';
-import { ListaService } from 'src/app/core/services/lista.service';
+import { MinhaListaService } from 'src/app/core/services/minha-lista.service';
+
 
 @Component({
   selector: 'app-minha-lista-card',
@@ -10,10 +11,12 @@ import { ListaService } from 'src/app/core/services/lista.service';
 export class MinhaListaCardComponent implements OnInit {
 
   lista: Lista;
-  constructor(private listaService: ListaService) { }
+  currentImage: any;
+
+  constructor(private listaService: MinhaListaService) { }
 
   ngOnInit() {
-    this.listaService.listaAtualizada()
+    this.listaService.minhaLista()
       .subscribe(lista => this.lista = lista);
   }
 

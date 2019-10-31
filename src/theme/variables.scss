@@ -1,30 +1,26 @@
-/**
- * Roof On (https://www.ennapd.com/ionDriver)
- *
- * Copyright © 2019-present Enappd. All rights reserved.
- *
- * This source code is licensed as per the terms found in the
- * LICENSE.md file in the root directory of this source tree.
- */
+// Ionic Variables and Theming. For more info, please see:
+// http://ionicframework.com/docs/theming/
 
 /** Ionic CSS Variables **/
-:root {
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Quicksand&display=swap");
 
+:root {
   /** primary **/
-  --ion-color-primary: #ffd524;
-  --ion-color-primary-rgb: 56, 128, 255;
-  --ion-color-primary-contrast: #000;
+  --ion-color-primary: #2b59c3;
+  --ion-color-primary-rgb: 43, 89, 195;
+  --ion-color-primary-contrast: #ffffff;
   --ion-color-primary-contrast-rgb: 255, 255, 255;
-  --ion-color-primary-shade: #e9c121;
-  --ion-color-primary-tint: #f8cc1c;
+  --ion-color-primary-shade: #264eac;
+  --ion-color-primary-tint: #406ac9;
 
   /** secondary **/
-  --ion-color-secondary: #FF8A00;
-  --ion-color-secondary-rgb: 255, 138, 0;
-  --ion-color-secondary-contrast: #000;
-  --ion-color-secondary-contrast-rgb: 255, 255, 255;
-  --ion-color-secondary-shade: #E98615;
-  --ion-color-secondary-tint: #FF8A00;
+  --ion-color-secondary: #f55f02;
+  --ion-color-secondary-rgb: 245, 95, 2;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  --ion-color-secondary-shade: #d85402;
+  --ion-color-secondary-tint: #f66f1b;
 
   /** tertiary **/
   --ion-color-tertiary: #7044ff;
@@ -37,7 +33,7 @@
   /** success **/
   --ion-color-success: #10dc60;
   --ion-color-success-rgb: 16, 220, 96;
-  --ion-color-success-contrast: #e0c8c8;
+  --ion-color-success-contrast: #ffffff;
   --ion-color-success-contrast-rgb: 255, 255, 255;
   --ion-color-success-shade: #0ec254;
   --ion-color-success-tint: #28e070;
@@ -75,17 +71,59 @@
   --ion-color-medium-tint: #a2a4ab;
 
   /** light **/
-  --ion-color-light: #F6F6F6;
-  --ion-color-light-rgb: 246, 246, 246;
+  --ion-color-light: #f4f5f8;
+  --ion-color-light-rgb: 244, 244, 244;
   --ion-color-light-contrast: #000000;
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
 
+  /** Custom **/
 
-  /**Font Family**/
-  --ion-font-family: 'PT Sans', sans-serif;
+  /** Gray **/
+  --ion-color-gray: #e1e2ed;
+  --ion-color-gray-rgb: 225, 226, 237;
+  --ion-color-gray-contrast: #000000;
+  --ion-color-gray-contrast-rgb: 0, 0, 0;
+  --ion-color-gray-shade: #c6c7d1;
+  --ion-color-gray-tint: #e4e5ef;
 
-  /* Set the background of the entire app */
-  --ion-background-color: #fafafa;
+  --ion-text-color: #666;
+  --ion-background-color: #f5f6ff;
+  --ion-toolbar-background: var(--ion-color-primary);
+  --ion-toolbar-color: var(--ion-color-primary-contrast);
+  --ion-font-family: "Quicksand", sans-serif;
+
+  ion-card {
+    --background: white;
+  }
+
+  ion-item {
+    --ion-item-background: transparent;
+  }
+
+  ion-searchbar {
+    --background: white;
+  }
+
+  ion-card {
+    ion-card-content {
+      ion-item {
+        font-size: 14px;
+        ion-icon {
+          font-size: 18px;
+          margin: 5px 15px 5px 5px;
+        }
+      }
+    }
+  }
+}
+
+.ion-color-gray {
+  --ion-color-base: var(--ion-color-gray);
+  --ion-color-base-rgb: var(--ion-color-gray-rgb);
+  --ion-color-contrast: var(--ion-color-gray-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-gray-contrast-rgb);
+  --ion-color-shade: var(--ion-color-gray-shade);
+  --ion-color-tint: var(--ion-color-gray-tint);
 }

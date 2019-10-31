@@ -1,0 +1,16 @@
+ion-card {
+  img {
+    width: 100%;
+    height: 80px;
+    object-fit: cover;
+  }
+
+  ion-card-header {
+    ion-card-subtitle {
+      text-overflow: ellipsis;
+      white-space: nowrap !important;
+      overflow: hidden;
+    }
+  }
+
+}

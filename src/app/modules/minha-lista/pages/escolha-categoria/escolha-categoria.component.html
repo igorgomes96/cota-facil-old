@@ -1,0 +1,26 @@
+<ion-content class="ion-padding">
+    <app-pesquisa-input (pesquisar)="pesquisar($event)"></app-pesquisa-input>
+
+    <ion-item lines="none">
+      <ion-label class="ion-text-wrap">Escolha a categoria dos itens que compõem sua lista.</ion-label>
+    </ion-item>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col size="6" *ngFor="let categoria of categoriasFiltradas">
+          <ion-card class="ion-no-margin" [button]="true" (click)="criarLista(categoria)">
+            <img [src]="categoria.imagem" />
+            <ion-card-header>
+              <ion-card-subtitle>
+                {{ categoria.nome }}
+              </ion-card-subtitle>
+            </ion-card-header>
+            <!-- <ion-card-content>
+              <ion-label color="dark">Item 1, Item 2, Item 3...</ion-label>
+            </ion-card-content> -->
+          </ion-card>
+        </ion-col>
+  
+      </ion-row>
+    </ion-grid>
+  </ion-content>

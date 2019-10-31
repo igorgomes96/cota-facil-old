@@ -4,7 +4,7 @@ export class Unidade {
 }
 
 export class Item {
-    id: number;
+    id: string;
     nome: string;
     descricao: string;
     unidade: Unidade;

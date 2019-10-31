@@ -1,0 +1,9 @@
+<ion-item lines="none" *ngIf="chat" [routerLink]="['/chat/', chat.id]">
+  <ion-avatar slot="start">
+    <img src="/assets/img/user.jpg">
+  </ion-avatar>
+  <ion-label>
+    <h2>{{ chat.nomeContato }}</h2>
+    <p>{{ chat.ultimaMensagem }}</p>
+  </ion-label>
+</ion-item>

@@ -1,37 +1,30 @@
 <ion-content class="ion-padding">
 
-  <ion-item-divider>
-    <ion-label>
-      Endereço de Entrega
-    </ion-label>
-  </ion-item-divider>
+  <div *ngIf="lista">
 
-  <ion-item lines="none">
-    <ion-thumbnail slot="start">
-      <img src="assets/img/maps-icon.png">
-    </ion-thumbnail>
-    <ion-label>
-      <p class="endereco">
-        Av. Dr. Laerte Vieira Gonçalves, nº 1627<br>
-        Santa Mônica, apto. 302<br>
-        <ion-text color="secondary"><small>Clique para alterar</small></ion-text>
-      </p>
-    </ion-label>
-  </ion-item>
+    <ion-item-divider>
+      <ion-label>
+        {{ lista.categoria.nome }}
+      </ion-label>
+      <ion-badge slot="end" *ngIf="lista" color="secondary">{{ qtdaItens }}</ion-badge>
 
-  <ion-item-divider>
-    <ion-label>
-      Lista de Produtos
-    </ion-label>
-    <ion-badge slot="end" color="warning" *ngIf="lista">{{ lista.itens?.length }}</ion-badge>
-  </ion-item-divider>
+    </ion-item-divider>
 
-  <app-lista-item *ngIf="lista" [itens]="lista.itens" [mostrarOpcoes]="true"
-    (remove)="removeItem($event)"></app-lista-item>
-
-  <ion-item>
-    <ion-textarea placeholder="Observações..."></ion-textarea>
-  </ion-item>
+    <app-lista-item *ngIf="lista" [itens]="lista.itens" [mostrarOpcoes]="true" (remove)="removeItem($event)">
+    </app-lista-item>
+  </div>
 
 </ion-content>
-<ion-button expand="full" color="primary">Solicitar Orçamentos</ion-button>
+
+<ion-footer no-border>
+  <div class="ion-padding-horizontal ion-padding-bottom">
+    <ion-button expand="block" [routerLink]="['revisao']">Finalizar</ion-button>
+  </div>
+
+  <ion-item lines="none" *ngIf="lista?.anexos?.length" color="gray">
+    <app-anexos (abrirAnexo)="abrirAnexo($event)" [anexos]="lista.anexos"></app-anexos>
+  </ion-item>
+
+  <app-input-item (adicionarTexto)="adicionaItem($event)" (adicionarImagem)="adicionarImagem($event)"></app-input-item>
+
+</ion-footer>

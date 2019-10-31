@@ -1,0 +1,5 @@
+<ion-content fullscreen>
+  <ion-list>
+    <app-conversa-item *ngFor="let conversa of conversas$ | async" [chat]="conversa"></app-conversa-item>
+  </ion-list>
+</ion-content>

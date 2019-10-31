@@ -1,9 +1,19 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
-  <ion-button size="full" color="primary" *ngIf="exibeBotaoMinhaLista && lista" href="/minha-lista">
-    Minha Lista
-    <ion-label class="qtda">
-      <ion-badge color="light">{{ lista.itens.length }}</ion-badge>
-    </ion-label>
-  </ion-button>
+
+  <ion-header *ngIf="header">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
+      <ion-title>{{ header }}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-router-outlet [ngClass]="header ? 'margin-header' : ''"></ion-router-outlet>
+
+  <!-- <ion-fab vertical="bottom" horizontal="end" slot="fixed" *ngIf="exibeBotaoChat">
+    <ion-fab-button (click)="chat()">
+      <ion-icon name="chatbubbles"></ion-icon>
+    </ion-fab-button>
+  </ion-fab> -->
 </ion-app>

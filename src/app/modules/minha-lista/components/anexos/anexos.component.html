@@ -1,0 +1,17 @@
+<div class="container-anexos">
+  <div scrollx="true">
+
+    <div *ngFor="let img of anexos" (click)="onAbrirAnexo(img)">
+      <!-- 
+      <ion-button class="btn-delete-attach">
+        <ion-icon name="close"></ion-icon>
+      </ion-button> -->
+
+      <ion-thumbnail slot="start">
+        <ion-img [src]="img.thumb"></ion-img>
+      </ion-thumbnail>
+
+    </div>
+
+  </div>
+</div>
