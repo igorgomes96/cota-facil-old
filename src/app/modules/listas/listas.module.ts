@@ -11,7 +11,7 @@ import { ListaDetalhesComponent } from './pages/lista-detalhes/lista-detalhes.co
   declarations: [
     ListasComponent,
     ListaCardComponent,
-    ListaDetalhesComponent
+    ListaDetalhesComponent,
   ],
   imports: [
     ListasRoutingModule,

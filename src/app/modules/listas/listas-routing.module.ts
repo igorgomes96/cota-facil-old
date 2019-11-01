@@ -16,7 +16,7 @@ const routes: Routes = [
     path: ':id',
     component: ListaDetalhesComponent,
     data: {
-      header: 'Detalhes da Lista',
+      header: 'Orçamentos Recebidos',
       exibeBotaoChat: false
     }
   }

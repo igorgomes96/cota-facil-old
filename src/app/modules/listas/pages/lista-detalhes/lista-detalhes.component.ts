@@ -21,8 +21,7 @@ export class ListaDetalhesComponent implements OnInit {
     this.route.params
       .pipe(
         switchMap(params => this.listasService.lista(params.id))
-      )
-      .subscribe(lista => this.lista = lista);
+      ).subscribe(lista => this.lista = lista);
   }
 
 }
